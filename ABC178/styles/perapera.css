@@ -1,0 +1,48 @@
+.header{
+    background-color: black;
+    padding :15px 10px;
+    width :100%;
+    height: var(--header-height);
+    /* position: fixed;
+    z-index: 1; */
+    margin : 0  0 auto;
+    font-weight: 500;
+    font-size:  20px;
+
+}
+.textwhite{
+    color:white;
+    margin : 0 auto;
+    padding :15px 10px;
+}
+.main{
+    padding : 10px 20px;
+
+}
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    margin : 0 0 auto;
+    font-weight: 200;
+}
+.circle{
+    width :100px;
+    height: 100px;
+    background-color:#FFE400;
+    border-radius:50px;
+}
+.descriptions{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+    text-align: center;
+    margin : 0 0 auto;
+}
+.sougiken{
+    background-color:#444140;
+    color:#bbb;
+}
+:root{
+    --header-height : 50px;
+}

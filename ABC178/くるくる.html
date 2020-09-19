@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            ABC178Eの解説
+        </title>
+        <link href="styles/perapera.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML"></script>
+    </head>
+    <body>
+        <div class="header">
+            <p class="textwhite">ABC178Eの解説</p>
+        </div>
+        <div class="main">
+        <div class="point">
+            <h3>解説</h3>
+            <hr>
+            <div class="point-board">
+                <p>とりあえずなんか書きたいね</p>
+                <p>ちょっと考えると、\( X,X^2,X^4,X^8...X^{2^N} ( \bmod M) \)の合計であることがわかります。</p>
+                <p>mod問題なので、あることをしたくなります。ループです。</p>
+                <p>\(M\)で割った余りは\(0,1,2,3...M-1\)しかないので、その数列の中では\(N\)が十分に大きいとき、その数列の中にはかぶるものが出てきます。</p>
+                <p>かぶるものが出てきたら、かぶったもののもういっこ後ろもかぶります。こうやって数学帰納法みたいな感じでループであることが証明できます。(説明が下手)</p>
+                <p>ループを検知します。さいごはループが途切れることも考えられるのでその辺をしっかりしときます。</p><p>しっかりしないと、バグらせまくってコンテスト終了6分前ぐらいにようやくACする羽目になります。</p>
+            </div>
+            <h3>感想</h3>
+            <hr>
+            <p>バグらせまくりすぎてうー</p>
+        </div>
+        </div>
+        <!-- <div class="footer">
+            <div class="sougiken">
+                <p class="honke"><a href="https://seikosportsday-2020.web.app" target="_blank">本家のサイト</a></p>
+                <p><a href=""></a></p>
+                <hr>
+                <div class="descriptions">
+                    <div class="logo">
+                        <div class="circle"></div>
+                    </div>
+                    <p><a>2020</a><a> とうもろこし(C) </a><a>All rights reserved</a><a>(こんなこと書いていいのか.....？)</a></p>
+                    <p><a>Created </a><a>by </a><a target="_blank" href="https://twitter.com/Akimasa_L">とうもろこし</a></p>
+                </div>
+            </div>
+        </div> -->
+    </body>
