@@ -1,7 +1,7 @@
 .header{
     background-color: black;
     padding :15px 10px;
-    width :100%;
+    /* width :100%; */
     height: var(--header-height);
     /* position: fixed;
     z-index: 1; */
