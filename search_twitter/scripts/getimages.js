@@ -84,6 +84,7 @@ $(function () {
                     method: 'GET',
                     headers: {
                         "Authorization":`Bearer ${getbearertoken()}`,
+                        "Access-Control-Allow-Origin":"*"
                     },
                 }
             )//end of fetch
