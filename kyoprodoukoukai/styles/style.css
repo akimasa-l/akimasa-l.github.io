@@ -1,0 +1,71 @@
+a{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.header a{
+    text-decoration: none;
+    animation-duration: 1s;
+    animation-delay: 0.3s;
+    animation-name: fadeInUp;
+}
+header a{
+    color:rgba(255, 255, 255, 1)
+}
+ul.header_links{
+    list-style: none;
+    display: flex;
+}
+
+header{
+    padding:0 100px;
+    position: relative; /*必ず必要*/
+    z-index: 2;/*必ず必要*/
+    display: flex;
+    padding: 0 100px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+li.header_link{
+    margin-right: 3vw;
+}
+ul.header_links{
+    justify-content: flex-end;
+    align-items: center;
+}
+.backgroundvideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+}
+
+/*
+* かっこいい下線
+*/
+
+a.header_link::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255,1);
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform .3s;
+}
+a.header_link:hover::after {
+    color: rgba(255, 255, 255,1);
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+ul.header_links > li > section,ul.header_links > li > section > a{
+    display: flex;
+    margin : 1em;
+}
