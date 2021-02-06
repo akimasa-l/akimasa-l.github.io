@@ -1,21 +1,3 @@
-function getValuefrominput() {
-    return $("input#text").val();
-}
-
-function getbearertoken() {
-    const bearertoken = "AAAAAAAAAAAAAAAAAAAAAPYJGwEAAAAArCl07yydVXKotnRLXxLVS5W%2Bz1U%3D2BmtCegpSyQbFWhz6Z5JkBBaQ353fCmbdIG8WGwT5Ga0b2fboF";
-    return bearertoken;
-}
-
-
-function getMediaObjectFromtweets(tweets) {
-    return tweets.includes.media;
-}
-
-function getUrlFromMediaObjectsAndMedia_key(mediaObject, media_key) {
-
-}
-
 class MediaObject {
     constructor(tweets) {
         this.exampleTweetsIncludeMedia = [
@@ -62,6 +44,31 @@ class MediaObject {
     }
 }
 
+function getValuefrominput() {
+    return $("input#get").val();
+}
+
+function getbearertoken() {
+    const bearertoken = "AAAAAAAAAAAAAAAAAAAAAPYJGwEAAAAArCl07yydVXKotnRLXxLVS5W%2Bz1U%3D2BmtCegpSyQbFWhz6Z5JkBBaQ353fCmbdIG8WGwT5Ga0b2fboF";
+    return bearertoken;
+}
+
+
+function getMediaObjectFromtweets(tweets) {
+    return tweets.includes.media;
+}
+
+function setImages(tweets, mediaObject/* :MediaObject */) {
+    for (const elem of tweets.data) {
+        if (elem.attachments) {
+            const media_key = elem.attachments.media_keys[0];
+            $("div#preview_images").append(`<p><img class=\"images_twitter\" src=${mediaObject.getUrlFromMedia_key(media_key)} alt=${elem.id}></p>`);
+        }
+    }
+}
+
+
+
 $(function () {
     $("#send").on(
         "click",//when send button is clicked
@@ -73,32 +80,35 @@ $(function () {
                 "max_results": 10,
                 "query": `${getValuefrominput()} has:images`,
                 "expansions": "attachments.media_keys",
-                //"tweet.fields":"entities,id,text"
+                //"tweet.fields":"entities,id,text",
+                "bearertoken": getbearertoken(),
             };
 
-            const url = `https://api.twitter.com/2/tweets/search/recent?`+new URLSearchParams(params);
+            const url = `https://script.google.com/macros/s/AKfycbzrJ3zuUniQAi7fMlbORhOrnnnMCR9MIKwBHpGWpg3F5H3Dh4gfdZv-/exec?` + new URLSearchParams(params);
 
             fetch(
                 url,
                 {//init
                     method: 'GET',
-                    headers: {
+                    //mode: "no-cors",
+                    //credentials: 'include',
+                    /* headers: {
                         "Authorization":`Bearer ${getbearertoken()}`,
-                        "Access-Control-Allow-Origin":"*"
-                    },
+                    }, */
                 }
             )//end of fetch
-                .then(responce => {$("div#preview_images").append(`<p>${responce.text()}</p>`)});
-            /* 
+                /* .then(response=>response.text())
+                    .then(response => {$("div#preview_images").append(`<p>${response/* +getValuefrominput() }</p > `)}); */
+
                 .then(
                     response => response.json()
                 )
                 .then(
                     tweets => {
                         const mediaObject = new MediaObject(tweets);
-                        $("div#preview_images").append("<p>as</p>")
+                        setImages(tweets, mediaObject)
                     }
-                ) */
+                )
         }
     )
 });

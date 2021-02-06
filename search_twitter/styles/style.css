@@ -5,36 +5,8 @@ html {
   text-align: center;
 }
 
-.page-header,
-.page-footer,
-.main-content {
-  margin: 30px 0;
-  border: 5px solid red;
-}
-
-.main-visual,
-.intro-section {
-  margin: 30px;
-  border: 5px solid green;
-}
-
-.intro-section__header {
-  margin: 30px;
-  border: 5px solid blue;
-}
-
-.intro-section__nav {
-  margin: 30px;
-  border: 5px solid blue;
-}
-
-.intro-section__content {
-  margin: 30px;
-  border: 5px solid blue;
-}
-
-.intro-section__contact {
-  margin: 30px;
-  border: 5px solid blue;
+div#preview_images {
+  margin: 25px;
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
